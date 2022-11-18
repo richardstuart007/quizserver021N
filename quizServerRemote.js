@@ -73,28 +73,28 @@ app.options('*', cors(corsOptions))
 //
 //  Cors Middleware
 //
-app.use(cors(corsOptions))
+app.use(cors())
 //.............................................................................
 //.  Routes - Tables
 //.............................................................................
-app.post(URL_TABLES, cors(corsOptions), (req, res) => {
+app.post(URL_TABLES, (req, res) => {
   logRawTables(req, 'POST', 'RAW', 'serverRaw')
   serverRaw.serverRaw(req, res, db, logCounter)
 })
 
-app.delete(URL_TABLES, cors(corsOptions), (req, res) => {
+app.delete(URL_TABLES, (req, res) => {
   logRawTables(req, 'DELETE', 'RAW', 'serverRaw')
   serverRaw.serverRaw(req, res, db, logCounter)
 })
 //.............................................................................
 //.  Routes - Register/SignIn
 //.............................................................................
-app.post(URL_SIGNIN, cors(corsOptions), (req, res) => {
+app.post(URL_SIGNIN, (req, res) => {
   logRawSignIn(req, 'POST Signin')
   serverSignin.serverSignin(req, res, db, logCounter)
 })
 
-app.post(URL_REGISTER, cors(corsOptions), (req, res) => {
+app.post(URL_REGISTER, (req, res) => {
   logRawSignIn(req, 'POST Register')
   serverRegister.serverRegister(req, res, db, logCounter)
 })

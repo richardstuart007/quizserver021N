@@ -30,9 +30,5 @@ exports.CORS_WHITELIST = [
   'https://quizclient021.netlify.app',
   'http://localhost:8103',
   'http://localhost:9103',
-  'http://localhost:9113',
-  'https://quizclient021.netlify.app/',
-  'http://localhost:8103/',
-  'http://localhost:9103/',
-  'http://localhost:9113/'
+  'http://localhost:9113'
 ]
