@@ -77,24 +77,24 @@ app.use(cors(corsOptions))
 //.............................................................................
 //.  Routes - Tables
 //.............................................................................
-app.post(URL_TABLES, (req, res) => {
+app.post(URL_TABLES, cors(corsOptions), (req, res) => {
   logRawTables(req, 'POST', 'RAW', 'serverRaw')
   serverRaw.serverRaw(req, res, db, logCounter)
 })
 
-app.delete(URL_TABLES, (req, res) => {
+app.delete(URL_TABLES, cors(corsOptions), (req, res) => {
   logRawTables(req, 'DELETE', 'RAW', 'serverRaw')
   serverRaw.serverRaw(req, res, db, logCounter)
 })
 //.............................................................................
 //.  Routes - Register/SignIn
 //.............................................................................
-app.post(URL_SIGNIN, (req, res) => {
+app.post(URL_SIGNIN, cors(corsOptions), (req, res) => {
   logRawSignIn(req, 'POST Signin')
   serverSignin.serverSignin(req, res, db, logCounter)
 })
 
-app.post(URL_REGISTER, (req, res) => {
+app.post(URL_REGISTER, cors(corsOptions), (req, res) => {
   logRawSignIn(req, 'POST Register')
   serverRegister.serverRegister(req, res, db, logCounter)
 })

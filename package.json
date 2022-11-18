@@ -6,8 +6,8 @@
   "main": "script.js",
   "scripts": {
     "start": "node quizServerRemote.js",
-    "startlocalremote": "node quizServerLocalRemote.js",
     "startlocal": "node quizServerLocal.js",
+    "startlocalremote": "node quizServerLocalRemote.js",
     "devstart": "nodemon quizServerLocal.js"
   },
   "author": "Richard",
