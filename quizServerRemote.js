@@ -61,11 +61,13 @@ app.use(express.json())
 //
 //  Cors
 //
-var corsOptions = {
+const corsOptions = {
   origin: '*',
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
+//  Allow pre-flight
+app.options('*', cors(corsOptions))
 //.............................................................................
 //.  Routes - Tables
 //.............................................................................
