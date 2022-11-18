@@ -48,17 +48,24 @@ const db = knex({
   }
 })
 //
+//  Log setup
 //
-
 console.log(
   `Database Connection==> Client(${REMOTE_KNEX_CLIENT}) host(${REMOTE_KNEX_HOST}) port(${REMOTE_KNEX_PORT}) user(${REMOTE_KNEX_USER}) database(${REMOTE_KNEX_DATABASE})`
 )
 //
-// Express & Cors
+// Express
 //
 const app = express()
 app.use(express.json())
-app.use(cors())
+//
+//  Cors
+//
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions))
 //.............................................................................
 //.  Routes - Tables
 //.............................................................................
