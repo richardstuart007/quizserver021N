@@ -23,3 +23,12 @@ exports.LOCAL_URL_PORT = 8101
 exports.URL_TABLES = '/QuizTables'
 exports.URL_REGISTER = '/QuizRegister'
 exports.URL_SIGNIN = '/QuizSignin'
+//---------------------------------------------------------------------
+//  corsWhitelist
+//---------------------------------------------------------------------
+exports.CORS_WHITELIST = [
+  'https://quizclient021.netlify.app',
+  'http://localhost:8103',
+  'http://localhost:9103',
+  'http://localhost:9113'
+]

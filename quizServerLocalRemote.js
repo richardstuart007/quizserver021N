@@ -32,7 +32,8 @@ const {
   REMOTE_URL_PORT,
   URL_SIGNIN,
   URL_TABLES,
-  URL_REGISTER
+  URL_REGISTER,
+  CORS_WHITELIST
 } = require('./quizServerConstants.js')
 //
 // Knex
@@ -48,17 +49,31 @@ const db = knex({
   }
 })
 //
+//  Log setup
 //
-
 console.log(
   `Database Connection==> Client(${REMOTE_KNEX_CLIENT}) host(${REMOTE_KNEX_HOST}) port(${REMOTE_KNEX_PORT}) user(${REMOTE_KNEX_USER}) database(${REMOTE_KNEX_DATABASE})`
 )
 //
-// Express & Cors
+// Express
 //
 const app = express()
 app.use(express.json())
-app.use(cors())
+//
+//  Cors
+//
+const corsOptions = {
+  origin: CORS_WHITELIST,
+  optionsSuccessStatus: 200
+}
+//
+//  Allow pre-flight
+//
+app.options('*', cors(corsOptions))
+//
+//  Cors Middleware
+//
+app.use(cors(corsOptions))
 //.............................................................................
 //.  Routes - Tables
 //.............................................................................
