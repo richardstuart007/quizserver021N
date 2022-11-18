@@ -63,7 +63,9 @@ app.use(express.json())
 //
 const corsOptions = {
   origin: '*',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  credentials: true,
+  maxAge: 3600
 }
 //
 //  Allow pre-flight
