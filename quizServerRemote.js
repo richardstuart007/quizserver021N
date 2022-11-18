@@ -32,8 +32,7 @@ const {
   REMOTE_URL_PORT,
   URL_SIGNIN,
   URL_TABLES,
-  URL_REGISTER,
-  CORS_WHITELIST
+  URL_REGISTER
 } = require('./quizServerConstants.js')
 //
 // Knex
@@ -63,7 +62,7 @@ app.use(express.json())
 //  Cors
 //
 const corsOptions = {
-  origin: CORS_WHITELIST,
+  origin: '*',
   optionsSuccessStatus: 200
 }
 //
