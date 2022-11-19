@@ -47,10 +47,4 @@ exports.CORS_WHITELIST_LOCAL_REMOTE = [
   'http://localhost:9103',
   'http://localhost:9113'
 ]
-exports.CORS_WHITELIST_REMOTE = [
-  'https://quizclient021n.netlify.app',
-  'https://quizclient021n.netlify.app/',
-  'http://localhost:8103',
-  'http://localhost:9103',
-  'http://localhost:9113'
-]
+exports.CORS_WHITELIST_REMOTE = 'https://quizclient021n.netlify.app'
