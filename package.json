@@ -7,8 +7,9 @@
   "scripts": {
     "start": "node quizServerRemote.js",
     "startlocal": "node quizServerLocal.js",
+    "startlocalTest": "node quizServerLocalTest.js",
     "startlocalremote": "node quizServerLocalRemote.js",
-    "devstart": "nodemon quizServerLocal.js"
+    "dev": "nodemon quizServerLocalTest.js"
   },
   "author": "Richard",
   "license": "ISC",
